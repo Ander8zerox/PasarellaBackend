@@ -18,7 +18,7 @@ public class LocalDAO {
 
     @Id
     @Column(name="id_local")
-    private String idLocal;
+    private Long idLocal;
     @Column(name="local_name")
     private String localName;
     @Column(name="local_number")

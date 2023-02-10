@@ -17,18 +17,18 @@ import javax.persistence.Table;
 public class CustomerDAO {
 
     @Id
-    @Column(name="id_user")
-    private Long idUser;
-    @Column(name="id_local")
-    private Long idLocal;
+    @Column(name="id_customer")
+    private Long idCustomer;
     @Column(name="name")
     private String name;
     @Column(name="document")
     private Integer document;
     @Column(name="telephone")
     private String telephone;
-    @Column(name="localName")
-    private String localName;
+    @Column(name="job_local_name")
+    private String jobLocalName;
     @Column(name="gender")
     private String gender;
+    @Column(name="id_local_creation")
+    private Long idLocalCreation;
 }
