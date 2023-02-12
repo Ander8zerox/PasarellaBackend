@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @NoArgsConstructor
@@ -26,8 +24,9 @@ public class LendingDAO {
     private String status;
     @Column(name="price")
     private String price;
-    @Column(name="product_detail")
-    private ArrayList<ProductDAO> productDetail;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_product")
+    private ArrayList<ProductDAO> products;
     @Column(name="observation")
     private String observation;
     @Column(name="id_local_creation")
