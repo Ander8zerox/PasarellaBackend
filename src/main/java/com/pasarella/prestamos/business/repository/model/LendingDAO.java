@@ -15,15 +15,15 @@ import java.util.ArrayList;
 public class LendingDAO {
 
     @Column(name="id_lending")
-    private String idLending;
+    private Long idLending;
     @Column(name="date_lending")
     private String dateLending;
     @Column(name="id_customer")
     private Long idCustomer;
     @Column(name="status")
     private String status;
-    @Column(name="price")
-    private String price;
+    @Column(name="total_amount")
+    private String totalAmount;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product")
     private ArrayList<ProductDAO> products;
