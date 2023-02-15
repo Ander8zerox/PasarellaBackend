@@ -4,6 +4,8 @@ import com.pasarella.prestamos.business.model.request.*;
 import com.pasarella.prestamos.business.repository.model.*;
 import org.mapstruct.Mapper;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface BusinessMapper {
 
@@ -24,6 +26,8 @@ public interface BusinessMapper {
     BLocal LocalDAOToBLocal(LocalDAO localDAO);
 
     BProduct ProductDAOToBProduct(ProductDAO productDAO);
+
+    List<BProduct> ProductDAOListToBProductList(List<ProductDAO> productDAOList);
 
     BUser UserDAOToBUser(UserDAO userDAO);
 }
