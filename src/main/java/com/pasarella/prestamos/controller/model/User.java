@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Builder
 @Setter
@@ -22,6 +23,6 @@ public class User {
     private Boolean isActive;
     @NotBlank(message = "idLocalCreation may not be blank")
     private String idLocalCreation;
-    @NotBlank(message = "local may not be blank")
+    @NotNull(message = "local may not be blank")
     private Local local;
 }

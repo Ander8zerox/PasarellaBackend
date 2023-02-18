@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Builder
@@ -25,6 +26,6 @@ public class Customer {
     private String jobLocalName;
     @NotBlank(message = "gender may not be blank")
     private String gender;
-    @NotBlank(message = "idLocalCreation may not be blank")
+    @NotNull(message = "idLocalCreation may not be blank")
     private Long idLocalCreation;
 }

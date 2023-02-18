@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class BCustomer extends Thread{
+public class BCustomer {
 
     private Long idCustomer;
     private String name;

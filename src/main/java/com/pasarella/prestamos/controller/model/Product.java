@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Builder
 @Setter
@@ -20,6 +21,6 @@ public class Product {
     private String name;
     @NotBlank(message = "price may not be blank")
     private String price;
-    @NotBlank(message = "idLocalCreation may not be blank")
+    @NotNull(message = "idLocalCreation may not be blank")
     private Long idLocalCreation;
 }

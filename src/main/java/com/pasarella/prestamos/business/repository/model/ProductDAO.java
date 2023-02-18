@@ -17,7 +17,7 @@ public class ProductDAO {
     @GeneratedValue
     @Column(name="id_product")
     private Long idProduct;
-    @Column(name="code",unique = true)
+    @Column(name="code",unique = true, nullable=false)
     private String code;
     @Column(name="name")
     private String name;

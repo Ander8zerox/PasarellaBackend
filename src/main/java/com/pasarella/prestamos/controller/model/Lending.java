@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 @Builder
@@ -28,6 +29,6 @@ public class Lending {
     private ArrayList<Product> products;
     @NotBlank(message = "observation may not be blank")
     private String observation;
-    @NotBlank(message = "idLocalCreation may not be blank")
+    @NotNull(message = "idLocalCreation may not be blank")
     private Long idLocalCreation;
 }
