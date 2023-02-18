@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 @Table(name="tb_lendings")
 public class LendingDAO {
 
+    @Id
     @Column(name="id_lending")
     private Long idLending;
     @Column(name="date_lending")
@@ -24,9 +26,8 @@ public class LendingDAO {
     private String status;
     @Column(name="total_amount")
     private String totalAmount;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_product")
-    private ArrayList<ProductDAO> products;
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<ProductDAO> products;
     @Column(name="observation")
     private String observation;
     @Column(name="id_local_creation")

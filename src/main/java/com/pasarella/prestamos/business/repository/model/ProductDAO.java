@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter
@@ -15,14 +13,16 @@ import javax.persistence.Table;
 @Table(name="tb_products")
 public class ProductDAO {
 
+    @Id
+    @GeneratedValue
     @Column(name="id_product")
     private Long idProduct;
-    @Column(name="code")
-    private Long code;
+    @Column(name="code",unique = true)
+    private String code;
     @Column(name="name")
-    private Long name;
+    private String name;
     @Column(name="price")
-    private Long price;
+    private String price;
     @Column(name="id_local_creation")
     private Long idLocalCreation;
 }

@@ -1,6 +1,6 @@
 package com.pasarella.prestamos.business.model.request;
 
-import com.pasarella.prestamos.business.repository.model.LocalDAO;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +8,7 @@ import lombok.Setter;
 @Builder
 @Setter
 @Getter
+@AllArgsConstructor
 public class BUser {
 
     private Long idUser;
@@ -15,5 +16,5 @@ public class BUser {
     private String password;
     private Boolean isActive;
     private String idLocalCreation;
-    private LocalDAO local;
+    private BLocal local;
 }

@@ -1,5 +1,6 @@
 package com.pasarella.prestamos.business.model.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,8 @@ import lombok.Setter;
 @Builder
 @Setter
 @Getter
-public class BCustomer {
+@AllArgsConstructor
+public class BCustomer extends Thread{
 
     private Long idCustomer;
     private String name;
