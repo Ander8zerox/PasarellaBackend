@@ -2,8 +2,10 @@ package com.pasarella.prestamos.business.impl;
 
 import com.pasarella.prestamos.business.BusinessInterface;
 import com.pasarella.prestamos.business.mapper.BusinessMapper;
+import com.pasarella.prestamos.business.model.request.BCustomer;
 import com.pasarella.prestamos.business.model.request.BProduct;
 import com.pasarella.prestamos.business.repository.RepositoryInterface;
+import com.pasarella.prestamos.business.repository.model.CustomerDAO;
 import com.pasarella.prestamos.business.repository.model.ProductDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,5 +39,16 @@ public class BusinessImpl implements BusinessInterface {
                 repositoryInterface.updateProduct(idProduct,
                         mapper.BProductToProductDAO(bProduct))
         );
+    }
+
+    @Override
+    public BCustomer createCustomer(BCustomer bCustomer) {
+        CustomerDAO customerDAO = mapper.BCustomerToCustomerDAO(bCustomer);
+        return mapper.CustomerDAOToBCustomer(repositoryInterface.save(customerDAO));
+    }
+
+    @Override
+    public List<BCustomer> getAllCustomers(Long idLocalCreation) {
+        return mapper.CustomerDAOListToBCustomerList(repositoryInterface.findAllCustomersByIdLocalCreation(idLocalCreation));
     }
 }

@@ -15,6 +15,7 @@ import java.util.List;
 public class LocalDAO {
 
     @Id
+    @GeneratedValue
     @Column(name="id_local")
     private Long idLocal;
     @Column(name="local_name")

@@ -16,6 +16,7 @@ import java.util.List;
 public class LendingDAO {
 
     @Id
+    @GeneratedValue
     @Column(name="id_lending")
     private Long idLending;
     @Column(name="date_lending")

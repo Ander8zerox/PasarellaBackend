@@ -21,6 +21,8 @@ public interface BusinessMapper {
 
     BCustomer CustomerDAOToBCustomer(CustomerDAO customerDAO);
 
+    List<BCustomer> CustomerDAOListToBCustomerList(List<CustomerDAO> customerDAOList);
+
     BLending LendingDAOToBLending(LendingDAO lendingDAO);
 
     BLocal LocalDAOToBLocal(LocalDAO localDAO);

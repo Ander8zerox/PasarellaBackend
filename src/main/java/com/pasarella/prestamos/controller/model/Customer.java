@@ -18,7 +18,7 @@ public class Customer {
     private Long idCustomer;
     @NotBlank(message = "name may not be blank")
     private String name;
-    @NotBlank(message = "document may not be blank")
+    @NotNull(message = "document may not be blank")
     private Integer document;
     @NotBlank(message = "telephone may not be blank")
     private String telephone;

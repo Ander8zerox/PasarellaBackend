@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter
@@ -17,11 +14,12 @@ import javax.persistence.Table;
 public class CustomerDAO {
 
     @Id
+    @GeneratedValue
     @Column(name="id_customer")
     private Long idCustomer;
     @Column(name="name")
     private String name;
-    @Column(name="document")
+    @Column(name="document",unique = true, nullable=false)
     private Integer document;
     @Column(name="telephone")
     private String telephone;
