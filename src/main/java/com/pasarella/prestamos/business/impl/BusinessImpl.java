@@ -29,4 +29,13 @@ public class BusinessImpl implements BusinessInterface {
     public List<BProduct> getAllProducts(Long idLocalCreation) {
         return mapper.ProductDAOListToBProductList(repositoryInterface.findAllProductsByIdLocalCreation(idLocalCreation));
     }
+
+    @Override
+    public BProduct updateProduct(Long idProduct, BProduct bProduct) {
+
+        return mapper.ProductDAOToBProduct(
+                repositoryInterface.updateProduct(idProduct,
+                        mapper.BProductToProductDAO(bProduct))
+        );
+    }
 }

@@ -58,6 +58,18 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public ProductDAO updateProduct(Long idProduct, ProductDAO productDAO) {
+
+        ProductDAO internalProductDao = productInterface.findByIdProduct(idProduct);
+        internalProductDao.setCode(productDAO.getCode());
+        internalProductDao.setName(productDAO.getName());
+        internalProductDao.setPrice(productDAO.getPrice());
+        productInterface.save(internalProductDao);
+
+        return internalProductDao;
+    }
+
+    @Override
     public UserDAO save(UserDAO userDAO) {
         return userInterface.save(userDAO);
     }

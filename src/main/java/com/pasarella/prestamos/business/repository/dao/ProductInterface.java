@@ -12,4 +12,6 @@ public interface ProductInterface extends JpaRepository<ProductDAO,Long> {
     ProductDAO save(ProductDAO productDAO);
 
     List<ProductDAO> findAllByIdLocalCreation(Long idLocalCreation);
+
+    ProductDAO findByIdProduct(Long idProduct);
 }

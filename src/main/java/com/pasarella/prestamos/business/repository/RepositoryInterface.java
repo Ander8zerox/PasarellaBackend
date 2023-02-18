@@ -20,6 +20,8 @@ public interface RepositoryInterface {
 
     List<ProductDAO> findAllProductsByIdLocalCreation(Long idLocalCreation);
 
+    ProductDAO updateProduct(Long idProduct, ProductDAO productDAO);
+
     UserDAO save(UserDAO userDAO);
 
     UserDAO findByUserName(String userName);
