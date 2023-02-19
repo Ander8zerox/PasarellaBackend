@@ -25,6 +25,8 @@ public interface BusinessMapper {
 
     BLending LendingDAOToBLending(LendingDAO lendingDAO);
 
+    List<BLending> LendingDAOListToBLendingList(List<LendingDAO> lendingDAOList);
+
     BLocal LocalDAOToBLocal(LocalDAO localDAO);
 
     BProduct ProductDAOToBProduct(ProductDAO productDAO);

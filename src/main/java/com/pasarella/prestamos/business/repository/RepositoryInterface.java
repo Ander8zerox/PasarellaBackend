@@ -16,6 +16,8 @@ public interface RepositoryInterface {
 
     List<LendingDAO> findAllLendingByIdLocalCreation(Long idLocalCreation);
 
+    List<LendingDAO> findAllLendingByIdLocalCreationAndDate(String date, Long idLocalCreation);
+
     LocalDAO save(LocalDAO localDAO);
 
     ProductDAO save(ProductDAO productDAO);

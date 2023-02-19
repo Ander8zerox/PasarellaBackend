@@ -9,7 +9,6 @@ import com.pasarella.prestamos.business.repository.RepositoryInterface;
 import com.pasarella.prestamos.business.repository.model.CustomerDAO;
 import com.pasarella.prestamos.business.repository.model.LendingDAO;
 import com.pasarella.prestamos.business.repository.model.ProductDAO;
-import com.pasarella.prestamos.controller.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,4 +69,12 @@ public class BusinessImpl implements BusinessInterface {
                 repositoryInterface.save(lendingDAO)
         );
     }
+
+    @Override
+    public List<BLending> getLendingsByDateAndIdLocalCreation(String date, Long idLocalCreation) {
+        return mapper.LendingDAOListToBLendingList(
+                repositoryInterface.findAllLendingByIdLocalCreationAndDate(date,idLocalCreation)
+        );
+    }
+
 }

@@ -13,5 +13,7 @@ public interface LendingInterface extends JpaRepository<LendingDAO,Long> {
 
     List<LendingDAO> findAllByIdLocalCreation(Long idLocalCreation);
 
+    List<LendingDAO> findAllByIdLocalCreationAndDateLending(Long idLocalCreation, String dateLending);
+
 
 }

@@ -29,5 +29,5 @@ public interface ControllerMapper {
 
     Lending bLendingToLending(BLending lending);
 
-    List<Lending> bLendingListToLendingList(List<Lending> lendingList);
+    List<Lending> bLendingListToLendingList(List<BLending> bLendingList);
 }

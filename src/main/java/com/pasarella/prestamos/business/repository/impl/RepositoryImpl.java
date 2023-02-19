@@ -53,6 +53,11 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public List<LendingDAO> findAllLendingByIdLocalCreationAndDate(String date, Long idLocalCreation) {
+        return lendingInterface.findAllByIdLocalCreationAndDateLending(idLocalCreation,date);
+    }
+
+    @Override
     public LocalDAO save(LocalDAO localDAO) {
         return localInterface.save(localDAO);
     }
