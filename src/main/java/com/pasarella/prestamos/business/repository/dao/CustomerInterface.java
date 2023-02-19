@@ -12,4 +12,6 @@ public interface CustomerInterface extends JpaRepository<CustomerDAO,Long> {
     CustomerDAO save(CustomerDAO customerDAO);
 
     List<CustomerDAO> findAllByIdLocalCreation(Long idLocalCreation);
+
+    CustomerDAO findByIdCustomer(Long idCustomer);
 }

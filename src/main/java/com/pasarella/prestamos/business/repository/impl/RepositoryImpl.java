@@ -33,6 +33,16 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public CustomerDAO updateCustomer(Long idCustomer, CustomerDAO customerDAO) {
+        CustomerDAO internalCustomerDao = customerInterface.findByIdCustomer(idCustomer);
+        internalCustomerDao.setName(customerDAO.getName());
+        internalCustomerDao.setTelephone(customerDAO.getTelephone());
+        internalCustomerDao.setGender(customerDAO.getGender());
+        internalCustomerDao.setJobLocalName(customerDAO.getJobLocalName());
+        return customerInterface.save(internalCustomerDao);
+    }
+
+    @Override
     public LendingDAO save(LendingDAO lendingDAO) {
         return lendingInterface.save(lendingDAO);
     }
@@ -64,9 +74,8 @@ public class RepositoryImpl implements RepositoryInterface {
         internalProductDao.setCode(productDAO.getCode());
         internalProductDao.setName(productDAO.getName());
         internalProductDao.setPrice(productDAO.getPrice());
-        productInterface.save(internalProductDao);
+        return productInterface.save(internalProductDao);
 
-        return internalProductDao;
     }
 
     @Override

@@ -39,4 +39,14 @@ public class CustomerController {
                 ),HttpStatus.OK
         );
     }
+
+    @PutMapping("/customerUpdating/{idCustomer}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable("idCustomer")Long idCustomer, @RequestBody Customer customer){
+        return new ResponseEntity<>(
+                mapper.bCustomerToCustomer(
+                        businessInterface.updateCustomer(idCustomer,
+                                mapper.customerToBCustomer(customer))
+                ),HttpStatus.OK
+        );
+    }
 }
