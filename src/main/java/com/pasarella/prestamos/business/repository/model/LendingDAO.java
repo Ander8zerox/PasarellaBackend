@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -16,7 +15,7 @@ import java.util.List;
 public class LendingDAO {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_lending")
     private Long idLending;
     @Column(name="date_lending")
@@ -27,7 +26,10 @@ public class LendingDAO {
     private String status;
     @Column(name="total_amount")
     private String totalAmount;
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @ManyToMany
+    @JoinTable( name="tb_lendings_products",
+                joinColumns = @JoinColumn(name="id_lending"),
+                inverseJoinColumns = @JoinColumn(name="id_product"))
     private List<ProductDAO> products;
     @Column(name="observation")
     private String observation;

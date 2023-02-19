@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class CustomerDAO {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_customer")
     private Long idCustomer;
     @Column(name="name")

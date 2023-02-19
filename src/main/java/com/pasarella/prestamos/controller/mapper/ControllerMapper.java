@@ -1,8 +1,10 @@
 package com.pasarella.prestamos.controller.mapper;
 
 import com.pasarella.prestamos.business.model.request.BCustomer;
+import com.pasarella.prestamos.business.model.request.BLending;
 import com.pasarella.prestamos.business.model.request.BProduct;
 import com.pasarella.prestamos.controller.model.Customer;
+import com.pasarella.prestamos.controller.model.Lending;
 import com.pasarella.prestamos.controller.model.Product;
 import org.mapstruct.Mapper;
 
@@ -22,4 +24,10 @@ public interface ControllerMapper {
     Customer bCustomerToCustomer(BCustomer bCustomer);
 
     List<Customer> bCustomerListToCustomerList(List<BCustomer> bCustomerList);
+
+    BLending lendingToBLending(Lending lending);
+
+    Lending bLendingToLending(BLending lending);
+
+    List<Lending> bLendingListToLendingList(List<Lending> lendingList);
 }

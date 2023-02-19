@@ -3,9 +3,11 @@ package com.pasarella.prestamos.business.impl;
 import com.pasarella.prestamos.business.BusinessInterface;
 import com.pasarella.prestamos.business.mapper.BusinessMapper;
 import com.pasarella.prestamos.business.model.request.BCustomer;
+import com.pasarella.prestamos.business.model.request.BLending;
 import com.pasarella.prestamos.business.model.request.BProduct;
 import com.pasarella.prestamos.business.repository.RepositoryInterface;
 import com.pasarella.prestamos.business.repository.model.CustomerDAO;
+import com.pasarella.prestamos.business.repository.model.LendingDAO;
 import com.pasarella.prestamos.business.repository.model.ProductDAO;
 import com.pasarella.prestamos.controller.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,13 @@ public class BusinessImpl implements BusinessInterface {
                 repositoryInterface.updateCustomer(idCustomer,
                         mapper.BCustomerToCustomerDAO(customer)
                 )
+        );
+    }
+    @Override
+    public BLending createLending(BLending lending) {
+        LendingDAO lendingDAO = mapper.BLendingToLendingDAO(lending);
+        return mapper.LendingDAOToBLending(
+                repositoryInterface.save(lendingDAO)
         );
     }
 }

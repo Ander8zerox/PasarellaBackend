@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class ProductDAO {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_product")
     private Long idProduct;
     @Column(name="code",unique = true, nullable=false)

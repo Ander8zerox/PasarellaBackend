@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class UserDAO {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_user")
     private Long idUser;
     @Column(name="user_name",unique = true)

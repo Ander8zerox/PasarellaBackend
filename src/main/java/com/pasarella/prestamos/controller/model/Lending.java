@@ -19,13 +19,13 @@ public class Lending {
     private Long idLending;
     @NotBlank(message = "dateLending may not be blank")
     private String dateLending;
-    @NotBlank(message = "idCustomer may not be blank")
+    @NotNull(message = "idCustomer may not be blank")
     private Long idCustomer;
     @NotBlank(message = "status may not be blank")
     private String status;
     @NotBlank(message = "totalAmount may not be blank")
     private String totalAmount;
-    @NotBlank(message = "products may not be blank")
+    @NotNull(message = "products may not be blank")
     private ArrayList<Product> products;
     @NotBlank(message = "observation may not be blank")
     private String observation;
