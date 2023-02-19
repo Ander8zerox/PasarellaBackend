@@ -3,6 +3,7 @@ package com.pasarella.prestamos.business;
 import com.pasarella.prestamos.business.model.request.BCustomer;
 import com.pasarella.prestamos.business.model.request.BLending;
 import com.pasarella.prestamos.business.model.request.BProduct;
+import com.pasarella.prestamos.business.model.request.BUser;
 
 import java.util.List;
 
@@ -25,4 +26,8 @@ public interface BusinessInterface {
     List<BLending> getLendingsByDateAndIdLocalCreation(String date,Long idLocalCreation);
 
     BLending updateLending(Long idLending, BLending bLending);
+
+    BUser createUser(BUser bUser);
+
+    BUser getUserByUserName(String userName);
 }

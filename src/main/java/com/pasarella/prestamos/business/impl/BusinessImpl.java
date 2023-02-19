@@ -5,6 +5,7 @@ import com.pasarella.prestamos.business.mapper.BusinessMapper;
 import com.pasarella.prestamos.business.model.request.BCustomer;
 import com.pasarella.prestamos.business.model.request.BLending;
 import com.pasarella.prestamos.business.model.request.BProduct;
+import com.pasarella.prestamos.business.model.request.BUser;
 import com.pasarella.prestamos.business.repository.RepositoryInterface;
 import com.pasarella.prestamos.business.repository.model.CustomerDAO;
 import com.pasarella.prestamos.business.repository.model.LendingDAO;
@@ -82,6 +83,22 @@ public class BusinessImpl implements BusinessInterface {
         return mapper.LendingDAOToBLending(
                 repositoryInterface.updateLending(idLending,
                         mapper.BLendingToLendingDAO(bLending))
+        );
+    }
+
+    @Override
+    public BUser createUser(BUser bUser) {
+        return mapper.UserDAOToBUser(
+                repositoryInterface.save(
+                        mapper.BUserToUserDAO(bUser)
+                )
+        );
+    }
+
+    @Override
+    public BUser getUserByUserName(String userName) {
+        return mapper.UserDAOToBUser(
+                repositoryInterface.findByUserName(userName)
         );
     }
 

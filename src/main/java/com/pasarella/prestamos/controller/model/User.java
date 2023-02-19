@@ -19,10 +19,10 @@ public class User {
     private String userName;
     @NotBlank(message = "password may not be blank")
     private String password;
-    @NotBlank(message = "isActive may not be blank")
+    @NotNull(message = "isActive may not be blank")
     private Boolean isActive;
     @NotBlank(message = "idLocalCreation may not be blank")
     private String idLocalCreation;
-    @NotNull(message = "local may not be blank")
+    //@NotNull(message = "local may not be blank")
     private Local local;
 }

@@ -24,6 +24,4 @@ public class LocalDAO {
     private String localNumber;
     @Column(name="is_active")
     private Boolean isActive;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "local")
-    private List<UserDAO> users;
 }

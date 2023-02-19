@@ -25,7 +25,4 @@ public class UserDAO {
     private Boolean isActive;
     @Column(name="id_local_creation")
     private String idLocalCreation;
-    @ManyToOne
-    @JoinColumn(name="id_local")
-    private LocalDAO local;
 }

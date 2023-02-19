@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.nsium.api'
+group = 'com.pasarella.api'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -24,6 +24,8 @@ dependencies {
 
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.32'
+	//implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.6.7'
+	//implementation group: 'org.springframework.security', name: 'spring-security-config', version: '5.6.7'
 }
 
 tasks.named('test') {
