@@ -39,4 +39,14 @@ public class LendingController {
                 ),HttpStatus.OK
         );
     }
+
+    @PutMapping("/lendingUpdating/{idLending}")
+    public ResponseEntity<Lending> updateLending(@PathVariable("idLending")Long idLending, @RequestBody Lending lending){
+        return new ResponseEntity<>(
+                mapper.bLendingToLending(
+                        businessInterface.updateLending(idLending,
+                                mapper.lendingToBLending(lending))
+                ),HttpStatus.OK
+        );
+    }
 }

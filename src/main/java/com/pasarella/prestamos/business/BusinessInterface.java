@@ -23,4 +23,6 @@ public interface BusinessInterface {
     BLending createLending(BLending lending);
 
     List<BLending> getLendingsByDateAndIdLocalCreation(String date,Long idLocalCreation);
+
+    BLending updateLending(Long idLending, BLending bLending);
 }

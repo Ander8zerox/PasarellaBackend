@@ -1,6 +1,7 @@
 package com.pasarella.prestamos.business.repository;
 
 import com.pasarella.prestamos.business.repository.model.*;
+import com.pasarella.prestamos.controller.model.Lending;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface RepositoryInterface {
     List<LendingDAO> findAllLendingByIdLocalCreation(Long idLocalCreation);
 
     List<LendingDAO> findAllLendingByIdLocalCreationAndDate(String date, Long idLocalCreation);
+
+    LendingDAO updateLending(Long idLending, LendingDAO lending);
 
     LocalDAO save(LocalDAO localDAO);
 

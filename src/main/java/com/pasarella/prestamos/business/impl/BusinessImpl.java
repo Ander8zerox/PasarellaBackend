@@ -77,4 +77,12 @@ public class BusinessImpl implements BusinessInterface {
         );
     }
 
+    @Override
+    public BLending updateLending(Long idLending, BLending bLending) {
+        return mapper.LendingDAOToBLending(
+                repositoryInterface.updateLending(idLending,
+                        mapper.BLendingToLendingDAO(bLending))
+        );
+    }
+
 }
