@@ -40,6 +40,15 @@ public class CustomerController {
         );
     }
 
+    @GetMapping("/customerObtainById")
+    public ResponseEntity<Customer> obtainCustomerById(@RequestParam Long idCustomer){
+        return new ResponseEntity<>(
+                mapper.bCustomerToCustomer(
+                        businessInterface.getCustomerById(idCustomer)
+                ),HttpStatus.OK
+        );
+    }
+
     @PutMapping("/customerUpdating/{idCustomer}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable("idCustomer")Long idCustomer, @RequestBody Customer customer){
         return new ResponseEntity<>(

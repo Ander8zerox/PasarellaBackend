@@ -51,6 +51,13 @@ public class BusinessImpl implements BusinessInterface {
     }
 
     @Override
+    public BCustomer getCustomerById(Long idCustomer) {
+        return mapper.CustomerDAOToBCustomer(
+                repositoryInterface.findCustomerById(idCustomer)
+        );
+    }
+
+    @Override
     public List<BCustomer> getAllCustomers(Long idLocalCreation) {
         return mapper.CustomerDAOListToBCustomerList(repositoryInterface.findAllCustomersByIdLocalCreation(idLocalCreation));
     }

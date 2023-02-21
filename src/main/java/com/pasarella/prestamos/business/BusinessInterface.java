@@ -17,6 +17,8 @@ public interface BusinessInterface {
 
     BCustomer createCustomer(BCustomer bCustomer);
 
+    BCustomer getCustomerById(Long idCustomer);
+
     List<BCustomer> getAllCustomers(Long idLocalCreation);
 
     BCustomer updateCustomer(Long idCustomer, BCustomer customer);

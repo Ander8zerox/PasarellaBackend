@@ -13,6 +13,8 @@ public interface RepositoryInterface {
 
     CustomerDAO updateCustomer(Long idCustomer, CustomerDAO customerDAO);
 
+    CustomerDAO findCustomerById(Long idCustomer);
+
     LendingDAO save(LendingDAO lendingDAO);
 
     List<LendingDAO> findAllLendingByIdLocalCreation(Long idLocalCreation);
