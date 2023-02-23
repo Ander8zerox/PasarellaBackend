@@ -101,6 +101,13 @@ public class BusinessImpl implements BusinessInterface {
     }
 
     @Override
+    public BLending getLendingById(Long idLending) {
+        return mapper.LendingDAOToBLending(
+                repositoryInterface.findLendingById(idLending)
+        );
+    }
+
+    @Override
     public BUser createUser(BUser bUser) {
         return mapper.UserDAOToBUser(
                 repositoryInterface.save(

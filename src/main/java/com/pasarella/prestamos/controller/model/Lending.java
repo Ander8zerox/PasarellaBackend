@@ -19,6 +19,8 @@ public class Lending {
     private Long idLending;
     @NotBlank(message = "dateLending may not be blank")
     private String dateLending;
+    @NotBlank(message = "customerName may not be blank")
+    private String customerName;
     @NotNull(message = "idCustomer may not be blank")
     private Long idCustomer;
     @NotBlank(message = "status may not be blank")

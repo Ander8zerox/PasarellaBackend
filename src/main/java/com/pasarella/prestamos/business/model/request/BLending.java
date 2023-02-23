@@ -15,6 +15,7 @@ public class BLending {
 
     private Long idLending;
     private String dateLending;
+    private String customerName;
     private Long idCustomer;
     private String status;
     private String totalAmount;

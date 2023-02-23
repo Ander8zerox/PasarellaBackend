@@ -20,6 +20,8 @@ public class LendingDAO {
     private Long idLending;
     @Column(name="date_lending")
     private String dateLending;
+    @Column(name="customer_name")
+    private String customerName;
     @Column(name="id_customer")
     private Long idCustomer;
     @Column(name="status")

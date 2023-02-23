@@ -31,6 +31,8 @@ public interface BusinessInterface {
 
     BLending updateLending(Long idLending, BLending bLending);
 
+    BLending getLendingById(Long idLending);
+
     BUser createUser(BUser bUser);
 
     BUser getUserByUserName(String userName);

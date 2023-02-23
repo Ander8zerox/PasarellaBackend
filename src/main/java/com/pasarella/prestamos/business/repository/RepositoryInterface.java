@@ -23,6 +23,8 @@ public interface RepositoryInterface {
 
     LendingDAO updateLending(Long idLending, LendingDAO lending);
 
+    LendingDAO findLendingById(Long idLending);
+
     LocalDAO save(LocalDAO localDAO);
 
     ProductDAO save(ProductDAO productDAO);

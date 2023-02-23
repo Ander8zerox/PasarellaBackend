@@ -73,6 +73,11 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public LendingDAO findLendingById(Long idLending) {
+        return lendingInterface.findByIdLending(idLending);
+    }
+
+    @Override
     public LocalDAO save(LocalDAO localDAO) {
         return localInterface.save(localDAO);
     }
