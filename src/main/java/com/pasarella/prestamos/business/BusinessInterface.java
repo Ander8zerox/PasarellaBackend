@@ -15,6 +15,8 @@ public interface BusinessInterface {
 
     BProduct updateProduct(Long idProduct, BProduct bProduct);
 
+    BProduct getProductById(Long idProduct);
+
     BCustomer createCustomer(BCustomer bCustomer);
 
     BCustomer getCustomerById(Long idCustomer);

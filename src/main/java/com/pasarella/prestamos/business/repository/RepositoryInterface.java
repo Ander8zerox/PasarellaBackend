@@ -31,6 +31,8 @@ public interface RepositoryInterface {
 
     ProductDAO updateProduct(Long idProduct, ProductDAO productDAO);
 
+    ProductDAO findProductById(Long idProduct);
+
     UserDAO save(UserDAO userDAO);
 
     UserDAO findByUserName(String userName);

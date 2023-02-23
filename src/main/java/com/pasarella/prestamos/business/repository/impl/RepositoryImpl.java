@@ -99,6 +99,11 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public ProductDAO findProductById(Long idProduct) {
+        return productInterface.findByIdProduct(idProduct);
+    }
+
+    @Override
     public UserDAO save(UserDAO userDAO) {
         return userInterface.save(userDAO);
     }

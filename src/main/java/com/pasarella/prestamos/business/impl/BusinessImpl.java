@@ -45,6 +45,13 @@ public class BusinessImpl implements BusinessInterface {
     }
 
     @Override
+    public BProduct getProductById(Long idProduct) {
+        return mapper.ProductDAOToBProduct(
+                repositoryInterface.findProductById(idProduct)
+        );
+    }
+
+    @Override
     public BCustomer createCustomer(BCustomer bCustomer) {
         CustomerDAO customerDAO = mapper.BCustomerToCustomerDAO(bCustomer);
         return mapper.CustomerDAOToBCustomer(repositoryInterface.save(customerDAO));

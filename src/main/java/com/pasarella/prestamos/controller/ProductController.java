@@ -45,7 +45,17 @@ public class ProductController {
         );
     }
 
-    @PutMapping("/productUpdating/{idProduct}")
+    @GetMapping("/productObtainById")
+    public ResponseEntity<Product> obtainProduct(@RequestParam Long idProduct){
+        return new ResponseEntity<>(
+                mapper.bProductToProduct(
+                        businessInterface.getProductById(idProduct)
+                ),HttpStatus.OK
+        );
+    }
+
+
+        @PutMapping("/productUpdating/{idProduct}")
     public ResponseEntity<Product> updateProduct(@PathVariable("idProduct") Long idProduct, @RequestBody Product product){
         return new ResponseEntity<>(
                 mapper.bProductToProduct(
