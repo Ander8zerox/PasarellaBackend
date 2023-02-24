@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @NoArgsConstructor
 @Getter
@@ -20,7 +21,7 @@ public class CustomerDAO {
     @Column(name="name")
     private String name;
     @Column(name="document",unique = true, nullable=false)
-    private Integer document;
+    private BigInteger document;
     @Column(name="telephone")
     private String telephone;
     @Column(name="job_local_name")

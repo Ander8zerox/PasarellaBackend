@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 @Builder
@@ -17,8 +18,9 @@ public class BLending {
     private String dateLending;
     private String customerName;
     private Long idCustomer;
+    private String jobLocal;
     private String status;
-    private String totalAmount;
+    private BigDecimal totalAmount;
     private ArrayList<BProduct> products;
     private String observation;
     private Long idLocalCreation;

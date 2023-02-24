@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @NoArgsConstructor
@@ -24,10 +25,12 @@ public class LendingDAO {
     private String customerName;
     @Column(name="id_customer")
     private Long idCustomer;
+    @Column(name="jobLocal")
+    private String jobLocal;
     @Column(name="status")
     private String status;
     @Column(name="total_amount")
-    private String totalAmount;
+    private BigDecimal totalAmount;
     @ManyToMany
     @JoinTable( name="tb_lendings_products",
                 joinColumns = @JoinColumn(name="id_lending"),

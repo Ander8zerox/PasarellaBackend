@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigInteger;
 
 
 @Builder
@@ -19,7 +20,7 @@ public class Customer {
     @NotBlank(message = "name may not be blank")
     private String name;
     @NotNull(message = "document may not be blank")
-    private Integer document;
+    private BigInteger document;
     @NotBlank(message = "telephone may not be blank")
     private String telephone;
     @NotBlank(message = "jobLocalName may not be blank")

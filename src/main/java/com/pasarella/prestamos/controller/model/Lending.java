@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 @Builder
@@ -23,13 +24,14 @@ public class Lending {
     private String customerName;
     @NotNull(message = "idCustomer may not be blank")
     private Long idCustomer;
+    @NotBlank(message = "jobLocal may not be blank")
+    private String jobLocal;
     @NotBlank(message = "status may not be blank")
     private String status;
-    @NotBlank(message = "totalAmount may not be blank")
-    private String totalAmount;
+    @NotNull(message = "totalAmount may not be blank")
+    private BigDecimal totalAmount;
     @NotNull(message = "products may not be blank")
     private ArrayList<Product> products;
-    @NotBlank(message = "observation may not be blank")
     private String observation;
     @NotNull(message = "idLocalCreation may not be blank")
     private Long idLocalCreation;
