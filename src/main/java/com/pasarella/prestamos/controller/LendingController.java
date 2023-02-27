@@ -40,6 +40,15 @@ public class LendingController {
         );
     }
 
+    @GetMapping("/lendingsObtainByStatus")
+    public ResponseEntity<List<Lending>> obtainLendingsStatus(@RequestParam String status, @RequestParam Long idLocalCreation){
+        return new ResponseEntity<>(
+                mapper.bLendingListToLendingList(
+                        businessInterface.getLendingsByIdLocalCreationAndStatus(idLocalCreation,status)
+                ),HttpStatus.OK
+        );
+    }
+
     @GetMapping("/lendingById")
     public ResponseEntity<Lending> obtainLendingById(@RequestParam Long idLending){
         return new ResponseEntity<>(

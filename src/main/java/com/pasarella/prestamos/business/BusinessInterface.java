@@ -4,6 +4,7 @@ import com.pasarella.prestamos.business.model.request.BCustomer;
 import com.pasarella.prestamos.business.model.request.BLending;
 import com.pasarella.prestamos.business.model.request.BProduct;
 import com.pasarella.prestamos.business.model.request.BUser;
+import com.pasarella.prestamos.business.repository.model.LendingDAO;
 
 import java.util.List;
 
@@ -28,6 +29,8 @@ public interface BusinessInterface {
     BLending createLending(BLending lending);
 
     List<BLending> getLendingsByDateAndIdLocalCreation(String date,Long idLocalCreation);
+
+    List<BLending> getLendingsByIdLocalCreationAndStatus(Long idLocalCreation, String status);
 
     BLending updateLending(Long idLending, BLending bLending);
 

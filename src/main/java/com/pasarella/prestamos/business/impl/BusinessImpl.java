@@ -93,6 +93,13 @@ public class BusinessImpl implements BusinessInterface {
     }
 
     @Override
+    public List<BLending> getLendingsByIdLocalCreationAndStatus(Long idLocalCreation, String status) {
+        return mapper.LendingDAOListToBLendingList(
+                repositoryInterface.findAllByIdLocalCreationAndStatus(idLocalCreation,status)
+        );
+    }
+
+    @Override
     public BLending updateLending(Long idLending, BLending bLending) {
         return mapper.LendingDAOToBLending(
                 repositoryInterface.updateLending(idLending,

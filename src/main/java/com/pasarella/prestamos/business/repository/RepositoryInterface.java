@@ -21,6 +21,8 @@ public interface RepositoryInterface {
 
     List<LendingDAO> findAllLendingByIdLocalCreationAndDate(String date, Long idLocalCreation);
 
+    List<LendingDAO> findAllByIdLocalCreationAndStatus(Long idLocalCreation, String status);
+
     LendingDAO updateLending(Long idLending, LendingDAO lending);
 
     LendingDAO findLendingById(Long idLending);

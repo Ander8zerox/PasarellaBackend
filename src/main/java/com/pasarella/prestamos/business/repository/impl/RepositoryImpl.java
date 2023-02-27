@@ -63,6 +63,11 @@ public class RepositoryImpl implements RepositoryInterface {
     }
 
     @Override
+    public List<LendingDAO> findAllByIdLocalCreationAndStatus(Long idLocalCreation, String status) {
+        return lendingInterface.findAllByIdLocalCreationAndStatus(idLocalCreation,status);
+    }
+
+    @Override
     public LendingDAO updateLending(Long idLending, LendingDAO lending) {
         LendingDAO internalLending = lendingInterface.findByIdLending(idLending);
         internalLending.setProducts(lending.getProducts());
