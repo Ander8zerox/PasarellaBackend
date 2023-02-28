@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: pasarella_user
-    url: jdbc:mysql://localhost:3306/pasarelladb
-    password: pasarella_user
+    username: esenyuscsigi0dx7oiet
+    url: jdbc:mysql://aws-sa-east-1.connect.psdb.cloud/pasareladb?sslMode=VERIFY_IDENTITY
+    password: pscale_pw_54Tr1lHKm5kOWeVq1owFAW9NGsNVfH9xzBnj3rBjEhu
   jpa:
     defer-datasource-initialization: 'false'
     hibernate:
